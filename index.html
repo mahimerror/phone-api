@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        * {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="container mx-auto">
+            <div class="search text-center my-8">
+                <h1 class="font-semibold text-3xl mb-7">Search your phone</h1>
+                <div class="flex justify-center items-center">
+                    <label class="input input-bordered flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="w-4 h-4 opacity-70">
+                            <path fill-rule="evenodd"
+                                d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <input type="text" id="input-field" class="grow" style="border: none;"
+                            placeholder="Search your phone" />
+                    </label>
+                    <button onclick="search()"
+                        class="font-bold text-lg py-3 px-6 bg-[#00cdb8] text-white rounded-lg ">Search</button>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <span id="loader" class="loading loading-infinity loading-lg text-[#00cdb8] my-40" hidden></span>
+            </div>
+
+            <div id="phone-container" class="grid grid-cols-3 gap-4">
+            </div>
+
+            <div class="text-center">
+                <button id="show-btn" class="my-8 btn btn-active btn-accent text-white" hidden>Show All</button>
+            </div>
+
+            <!-- Open the modal using ID.showModal() method -->
+            <dialog id="modal" class="modal modal-bottom sm:modal-middle">
+                <div id="modal-container" class="modal-box">
+                </div>
+            </dialog>
+        </section>
+    </main>
+
+    <script src="js/phone.js"></script>
+</body>
+
+</html>
